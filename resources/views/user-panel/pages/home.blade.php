@@ -53,17 +53,22 @@
                     <p>Browse our curated collections and discover styles for every occasion.</p>
                 </div>
             </div>
-            <div class="home-card-grid">
-                @for ($i = 0; $i <= 10; $i++)
-                    <x-user-panel.category-card />
-                @endfor
+            <div class="home-card-grid-section">
+                <div class="home-card-grid">
+
+                    @for ($i = 0; $i <= 10; $i++)
+                        <x-user-panel.category-card />
+                    @endfor
+                </div>
+
             </div>
             <div class="carousel-dots-section">
-                <div class="crousel-dots">
-
-                    @for ($j = 0; $j <= 10; $j++)
-                        <span class="carousel-dot{{ $j === 0 ? ' active' : '' }}"></span>
-                    @endfor
+                <div class="carousel-dots-scroll">
+                    <div class="crousel-dots">
+                        @for ($j = 0; $j <= 20; $j++)
+                            <span class="carousel-dot{{ $j === 0 ? ' active' : '' }}"></span>
+                        @endfor
+                    </div>
                 </div>
             </div>
         </div>
