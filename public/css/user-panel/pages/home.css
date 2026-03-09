@@ -1,0 +1,329 @@
+
+.home-hero {
+    background-image: url("/web-images/hero8.png");
+    background-size: cover;
+    background-position: top right;
+
+    height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: clamp(40px, 10vw, 12%);
+    position: relative;
+    overflow: hidden;
+}
+
+.home-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0)
+    );
+    z-index: 1;
+}
+
+.home-hero .home-hero-container {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 28%;
+}
+
+.home-hero .home-hero-title {
+    font-size: 3.8rem;
+    font-weight: 700;
+}
+
+.home-hero-subtitle {
+    font-size: 1.4rem;
+    line-height: 1.1;
+    opacity: 0.95;
+}
+
+.home-hero .home-hero-btns {
+    display: flex;
+    gap: 25px;
+}
+
+/* Base button */
+.home-hero .btn {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+}
+
+/* Primary button */
+.home-hero .btn-primary {
+    background: #ffffff;
+    color: #111;
+    border: none;
+}
+
+.home-hero .btn-primary:hover {
+    background: #eaeaea;
+    transform: translateY(-2px);
+}
+
+/* Outline button */
+.home-hero .btn-outline {
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+
+.home-hero .btn-outline:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+.home-hero a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================ HOME CATEGORY ================ */
+
+.home-category {
+    display: flex;
+    gap: 50px;
+    padding: min(8%, 70px) 0% min(8%, 70px) 4%;
+    height: auto;
+}
+.home-category .home-category-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.home-category .home-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    padding-right: 4%;
+}
+.home-head {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.home-head h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0 4%;
+}
+.home-head-line {
+    flex: 1 1 auto;
+    height: 1px;
+    background-color: #333;
+}
+.home-head-para {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.home-head-para p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 600px;
+    text-align: center;
+}
+.home-card-grid{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    gap: 50px;
+    overflow-x: auto;
+    width: 100%;
+}
+.home-card-grid::-webkit-scrollbar {
+    display: none;
+}
+/* ================ carousel dots =========== */
+.carousel-dots-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+.crousel-dots{
+    display: flex;
+    gap: 15px;
+}
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.carousel-dot.active {
+    background-color: #333;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+    .home-hero {
+        height: 80vh;
+        padding: 0 8%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-hero .home-hero-container {
+        align-items: center;
+        text-align: center;
+        max-width: 600px;
+        height: auto;
+        gap: 20px;
+    }
+
+    .home-hero .home-hero-title {
+        font-size: 3rem;
+    }
+
+    .home-hero .home-hero-subtitle {
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+
+    .home-hero .home-hero-btns {
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .home-hero .btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+    .home-head h2 {
+        font-size: 2rem;
+    }
+    .home-head-para p {
+        font-size: 1.1rem;
+    }
+    .home-card-grid{
+        gap: 40px;
+    }
+    .home-category .home-category-content{
+        gap: 40px;
+    }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+    .home-hero {
+        height: 65vh;
+        padding: 0 7%;
+    }
+
+    .home-hero .home-hero-title {
+        font-size: 2.2rem;
+    }
+
+    .home-hero .home-hero-subtitle {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+
+    .home-hero .home-hero-btns {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .home-hero .btn {
+        width: 220px;
+        text-align: center;
+    }
+    .home-head h2{
+        font-size: 1.5rem;
+    }
+    .home-head-para p {
+        font-size: 1rem;
+    }
+    .home-card-grid{
+        gap: 30px;
+    }
+    .home-category .home-category-content{
+        gap: 30px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+    .home-hero {
+        height: 50vh;
+        padding: 0 6%;
+    }
+
+    .home-hero .home-hero-title {
+        font-size: 1.9rem;
+    }
+
+    .home-hero .home-hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .home-head h2{
+        font-size: 1.2rem;
+    }
+    .home-head-para p {
+        font-size: 0.9rem;
+    }
+    .home-card-grid{
+        gap: 20px;
+    }
+    .home-category .home-category-content{
+        gap: 20px;
+    }
+}
+
+/* ================= SMALLEST MOBILE ================= */
+@media (max-width: 360px) {
+    .home-hero {
+        height: 45vh;
+        padding: 0 5%;
+    }
+
+    .home-hero .home-hero-title {
+        font-size: 1.6rem;
+    }
+
+    .home-hero .home-hero-subtitle {
+        font-size: 0.9rem;
+    }
+    .home-head h2{
+        font-size: 1rem;
+    }
+    .home-head-para p {
+        font-size: 0.8rem;
+    }
+    .home-card-grid{
+        gap: 10px;
+    }
+    .home-category .home-category-content{
+        gap: 10px;
+    }
+}

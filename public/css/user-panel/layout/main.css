@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color-background-header: #ffffff;
+    --color-background-overlay: rgba(0, 0, 0, 0.2);
+    --color-text-header: #333;
+    --color-text-inverse: #fff;
+    --color-text-link: #333;
+    --color-text-link-active: #232526;
+    --color-text-link-active-end: #414345;
+}
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    
+}
+main > section {
+    padding: 8%px 0;
+}
+
