@@ -1,8 +1,18 @@
+header .ham-mega-menu + .ham-drop-down .nav-drop-down {
+    transition: transform 0.2s ease;
+}
+header .ham-mega-menu.active ~ .ham-drop-down .nav-drop-down,
+header .ham-drop-down.active .nav-drop-down {
+    transform: rotate(180deg);
+}
 /* ================= HEADER BASE ================= */
 header {
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 0 4%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 header nav {
     display: flex;
@@ -25,7 +35,7 @@ header nav .nav-logo h1 {
     font-size: 23px;
     color: #333;
     text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 700;
 }
 /* ================= NAV LINKS ================= */
 header nav .nav-drop-down {
@@ -52,7 +62,6 @@ header nav .nav-links > a:hover,
 header nav .nav-links > div > a:hover {
     color: #000;
 }
-
 
 /* ================= SEARCH ================= */
 header nav .nav-search {
@@ -141,7 +150,7 @@ header .mega-menu {
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
     z-index: 20;
 }
-header .mega-menu *{
+header .mega-menu * {
     text-transform: capitalize;
 }
 
@@ -176,12 +185,12 @@ header .mega-child {
     padding: 0;
     margin: 0;
 }
-header .mega-menu  strong {
+header .mega-menu strong {
     font-size: 16px;
     color: #333;
     text-decoration: none;
     transition: all 0.2s ease;
-    text-transform: uppercase ;
+    text-transform: uppercase;
     font-weight: 600;
 }
 
@@ -235,8 +244,8 @@ header .hamburger-menu {
     top: 0;
     display: flex;
     flex-direction: column;
-    z-index:1000;
-visibility: hidden;
+    z-index: 1000;
+    visibility: hidden;
     opacity: 0;
     transition: all 0.3s ease;
 }
@@ -244,10 +253,10 @@ header .hamburger-menu.active {
     visibility: visible;
     opacity: 1;
 }
-header .hamburger-menu .hamburger-content::-webkit-scrollbar{
-    display:none;
+header .hamburger-menu .hamburger-content::-webkit-scrollbar {
+    display: none;
 }
-header .hamburger-menu .hamburger-content{
+header .hamburger-menu .hamburger-content {
     display: flex;
     flex-direction: column;
     padding: 4% 4%;
@@ -264,31 +273,30 @@ header .hamburger-header {
     align-items: center;
     gap: 20px;
     border-bottom: 1px solid #eee;
-    padding-bottom: 2% ;
+    padding-bottom: 2%;
 }
-header .ham-welcome-user{
+header .ham-welcome-user {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-header .ham-welcome-user h2{
+header .ham-welcome-user h2 {
     font-size: 18px;
     color: #333;
     text-transform: uppercase;
     /* font-weight: 900; */
 }
-header .ham-welcome-user a{
+header .ham-welcome-user a {
     font-size: 14px;
     color: #333;
     text-decoration: none;
     transition: color 0.2s ease;
 }
-header .ham-welcome-user a:hover{
+header .ham-welcome-user a:hover {
     color: #000;
     padding-left: 4px;
 }
-header .ham-links
-{
+header .ham-links {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -304,37 +312,37 @@ header .ham-link-box {
     align-items: center;
     gap: 10px;
 }
-header .ham-link-box a{
+header .ham-link-box a {
     color: #333;
     text-decoration: none;
     transition: color 0.2s ease;
     text-align: center;
     padding-top: 5px;
 }
-header .ham-link-box img{
+header .ham-link-box img {
     height: 20px;
     align-items: center;
 }
-header .ham-shop-link{
+header .ham-shop-link {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-header .ham-shop-link img{
+header .ham-shop-link img {
     height: 22px;
 }
-header .ham-shop-link a{
+header .ham-shop-link a {
     font-size: 16px;
     color: #333;
     text-decoration: none;
     transition: color 0.2s ease;
 }
-header .ham-shop{
+header .ham-shop {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-header .ham-mega-menu{
+header .ham-mega-menu {
     display: flex;
     flex-direction: column;
     padding-left: 50px;
@@ -347,7 +355,7 @@ header .ham-mega-menu{
     opacity: 0;
     transition: all 0.3s ease;
 }
-header .ham-mega-menu.active{
+header .ham-mega-menu.active {
     display: flex;
     visibility: visible;
     opacity: 1;
@@ -359,46 +367,52 @@ header .ham-mega-menu::-webkit-scrollbar {
 }
 header .ham-mega-menu::-webkit-scrollbar-thumb {
     background: #c1c1c1;
-    border-radius: 8px;
+    border-radius: 8px ;
 }
 header .ham-mega-menu::-webkit-scrollbar-thumb:hover {
     background: #a0a0a0;
 }
-header .ham-mega-menu a{
+header .ham-mega-menu a {
     font-size: 14px;
     color: #555;
     text-decoration: none;
     transition: all 0.2s ease;
-    padding: 0 0 20px 4%;
-    
+    margin-left: 3%;
+    padding: 8px 16px;
 }
-header .ham-nav-shop{
+header .ham-mega-menu a:hover{
+    background-color: #eee;
+}
+header .ham-nav-shop {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-header .ham-logout{
+header .ham-logout {
     display: flex;
     /* justify-content: center; */
     padding: 20px 0;
 }
-header .ham-logout button{
+header .ham-logout button {
     border: 1px solid #d1d5db;
     background: #f5f6fa;
     color: #222;
     font-size: 15.5px;
-    font-family: 'Inter', 'Poppins', Arial, sans-serif;
     font-weight: 500;
     letter-spacing: 0.1px;
     cursor: pointer;
-    transition: background 0.18s, border 0.18s, color 0.18s;
+    transition:
+        background 0.18s,
+        border 0.18s,
+        color 0.18s;
     padding: 8px 22px;
     border-radius: 6px;
     text-transform: none;
     box-shadow: none;
     outline: none;
 }
-header .ham-logout button:hover, header .ham-logout button:focus {
+header .ham-logout button:hover,
+header .ham-logout button:focus {
     background: #e4e7ef;
     color: #111;
     border-color: #bfc5ce;
@@ -406,20 +420,21 @@ header .ham-logout button:hover, header .ham-logout button:focus {
 header .ham-mega-menu::-webkit-scrollbar {
     width: 6px;
 }
-header .ham-cross{
+header .ham-cross {
     position: absolute;
     top: 18px;
     right: 18px;
     z-index: 1100;
     cursor: pointer;
-
 }
-header .ham-cross svg{
+header .ham-cross svg {
     height: 20px;
     width: 20px;
     display: block;
     fill: #333;
 }
+
+
 
 /* ================= RESPONSIVE ================= */
 /* Tablet */

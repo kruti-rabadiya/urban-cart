@@ -29,14 +29,16 @@ document.addEventListener('DOMContentLoaded', function () {
     /* ================= HAMBURGER ================= */
 
     function HamburgerMenu() {
+        const hamShop =document.querySelector('.ham-shop')
         const hamburgerIcon = document.querySelector('header .nav-hamburger');
         const hamburgerMenu = document.querySelector('header .hamburger-menu');
         const hamCross = document.querySelector('.ham-cross');
         const hamdropdown = document.querySelector('header .ham-drop-down');
         const hamDropdownMenu = document.querySelector('.ham-mega-menu');
-        if(hamdropdown)
-        hamdropdown.addEventListener('click', function () {
+        if(hamShop)
+        hamShop.addEventListener('click', function () {
             hamDropdownMenu.classList.toggle('active');
+            hamdropdown.classList.toggle('active');
         
         });
         if (hamCross) {
@@ -48,6 +50,26 @@ document.addEventListener('DOMContentLoaded', function () {
                 hamburgerMenu.classList.remove('active');
             });
         }
+        // Hamburger dropdown: mimic desktop dropdown behavior
+        // if (hamdropdown && hamDropdownMenu) {
+        //     hamdropdown.addEventListener('click', function (e) {
+        //         e.preventDefault();
+        //         hamDropdownMenu.classList.toggle('active');
+        //         hamdropdown.classList.toggle('active');
+        //     });
+
+        //     hamDropdownMenu.addEventListener('mouseleave', function () {
+        //         hamDropdownMenu.classList.remove('active');
+        //         hamdropdown.classList.remove('active');
+        //     });
+
+        //     document.addEventListener('click', function (e) {
+        //         if (!hamdropdown.contains(e.target) && !hamDropdownMenu.contains(e.target)) {
+        //             hamDropdownMenu.classList.remove('active');
+        //             hamdropdown.classList.remove('active');
+        //         }
+        //     });
+        // }
     }
     HamburgerMenu();
 

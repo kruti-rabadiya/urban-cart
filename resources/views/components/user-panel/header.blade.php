@@ -13,7 +13,14 @@
         <div class="hamburger-menu">
             <div class="hamburger-content">
                 <div class="ham-cross">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M19 5L5 19M5 5L9.5 9.5M12 12L19 19" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M19 5L5 19M5 5L9.5 9.5M12 12L19 19" stroke="#000000" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
                 </div>
                 <div class="hamburger-header">
                     <div class="ham-welcome-user">
@@ -30,7 +37,7 @@
                         <div class="ham-shop">
                             <div class="ham-shop-link">
                                 <img src="{{ asset('svgs/shop-icon.svg') }}" alt="Shop">
-                                <a href="/shop">Shop</a>
+                                <a>Shop</a>
 
                             </div>
                             <div class="ham-drop-down">

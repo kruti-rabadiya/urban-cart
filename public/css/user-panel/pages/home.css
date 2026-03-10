@@ -83,7 +83,7 @@
 }
 
 .home-hero .btn-outline:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(157, 157, 157, 0.15);
     border-color: #ffffff;
     transform: translateY(-2px);
 }
@@ -92,21 +92,25 @@
     color: inherit;
 }
 
-/* ================ HOME CATEGORY ================ */
-
+/* ================ HOME SECTION  ================ */
+/** category */
 .home-category {
+    background-color: #eee;
+}
+.home-section {
     display: flex;
     gap: 50px;
     height: auto;
 }
-.home-category .home-category-content {
+.home-section .home-section-content {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 50px;
+    padding-bottom: min(8%, 70px);
 }
 
-.home-category .home-heading {
+.home-section .home-heading {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -143,7 +147,7 @@
     max-width: 600px;
     text-align: center;
 }
-/* .home-card-grid{
+.home-card-grid{
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
@@ -151,7 +155,7 @@
     overflow-x: auto;
     width: 100%;
     scroll-behavior: smooth;
-} */
+}
 
 .home-card-grid::-webkit-scrollbar {
     display: none;
@@ -176,7 +180,7 @@
 .carousel-dots-section {
     width: 100%;
     overflow-x: auto;
-    padding: 0% 0% 4% 4%;
+    /* padding: 0% 0% 4% 4%; */
 }
 
 /* hide scrollbar */
@@ -189,6 +193,7 @@
     gap: 15px;
     width: max-content;
     margin: 0 auto;
+    padding-left: 4%;
 }
 
 .carousel-dot {
@@ -203,6 +208,19 @@
 
 .carousel-dot.active {
     background-color: #333;
+}
+.categoryimg.active {
+    outline: 2px solid #000000;
+    outline-offset: 4px;
+}
+/* ============== Crousle left - right ============= */
+
+/* ============== HOME FEATURED PRODUCT ============= */
+.home-featured-products {
+    display: flex;
+    gap: 50px;
+    height: auto;
+    /* background-color: aquamarine; */
 }
 
 /* ================= RESPONSIVE ================= */
@@ -251,7 +269,7 @@
     .home-card-grid {
         gap: 40px;
     }
-    .home-category .home-category-content {
+    .home-section .home-section-content {
         gap: 40px;
     }
 }
@@ -291,7 +309,7 @@
     .home-card-grid {
         gap: 30px;
     }
-    .home-category .home-category-content {
+    .home-section .home-section-content {
         gap: 30px;
     }
 }
@@ -320,7 +338,7 @@
     .home-card-grid {
         gap: 20px;
     }
-    .home-category .home-category-content {
+    .home-section .home-section-content {
         gap: 20px;
     }
 }
@@ -348,7 +366,7 @@
     .home-card-grid {
         gap: 10px;
     }
-    .home-category .home-category-content {
+    .home-section .home-section-content {
         gap: 10px;
     }
 }

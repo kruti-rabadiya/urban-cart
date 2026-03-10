@@ -6,6 +6,7 @@
     /* width: 220px; */
     padding: 20px 10px;
 }
+
 .category-img {
     width: 200px;
     height: 200px;
@@ -17,6 +18,11 @@
     position: relative;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
+}
+
+.category-card.selected .category-img {
+    outline-offset: 4px;
+    outline: 2px solid #000000;
 }
 
 .category-img img {
