@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\user-panel;
+namespace App\View\Components\userPanel;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -21,6 +21,6 @@ class ReviewCard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.user-panel.review-card');
+        return view('components.userPanel.review-card');
     }
 }

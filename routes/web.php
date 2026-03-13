@@ -7,4 +7,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::view('/', 'user-panel.pages.home')->name('home');
+Route::view('/', 'userPanel.pages.home')->name('home');

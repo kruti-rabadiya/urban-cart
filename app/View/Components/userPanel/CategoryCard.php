@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\user-panel;
+namespace App\View\Components\userPanel;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class ProductCard extends Component
+class CategoryCard extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class ProductCard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.user-panel.product-card');
+        return view('components.userPanel.category-card');
     }
 }

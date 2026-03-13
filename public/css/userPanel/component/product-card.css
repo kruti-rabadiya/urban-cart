@@ -6,6 +6,8 @@
         height: 350px;
         flex: 0 0 auto;
         border: 1px solid #ddd;
+        margin: min(20px, 10%) 0;
+        cursor:default;
 
 
     }

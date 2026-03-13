@@ -18,6 +18,7 @@
     position: relative;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease;
+    cursor: default;
 }
 
 .category-card.selected .category-img {

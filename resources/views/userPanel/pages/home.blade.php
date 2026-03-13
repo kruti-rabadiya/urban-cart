@@ -1,14 +1,16 @@
-@extends('user-panel.layout.main')
+@extends('userPanel.layout.main')
 
 @section('title', 'Home')
 
 @push('styles')
     {{-- style for home page --}}
-    <link rel="stylesheet" href="{{ asset('css/user-panel/pages/home.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/userPanel/pages/home.css') }}">
     {{-- style for category card --}}
-    <link rel="stylesheet" href="{{ asset('css/user-panel/component/category-card.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/userPanel/component/category-card.css') }}">
     {{-- style for product card --}}
-    <link rel="stylesheet" href="{{ asset('css/user-panel/component/product-card.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/userPanel/component/product-card.css') }}">
+    {{-- style for review card --}}
+    <link rel="stylesheet" href="{{ asset('css/userPanel/component/review-card.css') }}">
 @endpush
 
 
@@ -63,7 +65,7 @@
                 <div class="home-card-grid">
 
                     @for ($i = 0; $i <= 4; $i++)
-                        <x-user-panel.category-card />
+                        <x-userPanel.category-card />
                     @endfor
                 </div>
 
@@ -99,7 +101,7 @@
                 <div class="home-card-grid">
 
                     @for ($i = 0; $i <= 3; $i++)
-                        <x-user-panel.product-card />
+                        <x-userPanel.product-card />
                     @endfor
                 </div>
 
@@ -137,6 +139,7 @@
 
     </section>
 
+    {{-- new arrivals --}}
     <section class="home-section home-new-arrivals">
         <div class="home-section-content">
             <div class="home-heading">
@@ -155,7 +158,7 @@
                 <div class="home-card-grid">
 
                     @for ($i = 0; $i <= 7; $i++)
-                        <x-user-panel.product-card />
+                        <x-userPanel.product-card />
                     @endfor
                 </div>
 
@@ -171,6 +174,44 @@
             </div>
         </div>
     </section>
+
+    {{-- Reviews --}}
+    <section class="home-section home-reviews">
+        <div class="home-section-content">
+            <div class="home-heading">
+                <div class="home-head">
+                    <div class="home-head-line"></div>
+                    <h2>
+                        CUSTOMER REVIEWS
+                    </h2>
+                    <div class="home-head-line"></div>
+                </div>
+                <div class="home-head-para">
+                    <p>See what our customers are saying about our products.</p>
+                </div>
+            </div>
+            <div class="home-card-grid-section">
+                <div class="home-card-grid">
+
+                    @for ($i = 0; $i <= 7; $i++)
+                        <x-userPanel.review-card />
+                    @endfor
+                </div>
+
+            </div>
+            <div class="carousel-dots-section">
+                <div class="carousel-dots-scroll">
+                    <div class="crousel-dots">
+                        @for ($j = 0; $j <= 7; $j++)
+                            <span class="carousel-dot{{ $j === 0 ? ' active' : '' }}"></span>
+                        @endfor
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <script>
         const crousleDots = document.querySelectorAll('.carousel-dot');
         crousleDots.forEach((dot, index) => {
@@ -182,3 +223,4 @@
         })
     </script>
 @endsection
+

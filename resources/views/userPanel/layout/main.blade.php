@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'STORE')</title>
     {{-- default styles --}}
-    <link rel="stylesheet" href="{{asset ('css/user-panel/component/header.css')}}">
-    <link rel="stylesheet" href="{{asset ('css/user-panel/component/footer.css')}}">
-    <link rel="stylesheet" href="{{asset ('css/user-panel/layout/main.css')}}">
+    <link rel="stylesheet" href="{{asset ('css/userPanel/component/header.css')}}">
+    <link rel="stylesheet" href="{{asset ('css/userPanel/component/footer.css')}}">
+    <link rel="stylesheet" href="{{asset ('css/userPanel/layout/main.css')}}">
     @stack('styles')
 </head>
 <body>
-    @include('components.user-panel.header')
+    @include('components.userPanel.header')
     <main>
         @yield('content')
     </main>
-    @include('components.user-panel.footer')
+    @include('components.userPanel.footer')
     @stack('scripts')
     {{-- default js --}}
-    <script src="{{ asset('js/user-panel/component/header.js') }}"></script>
+    <script src="{{ asset('js/userPanel/component/header.js') }}"></script>
 </body>
 </html>

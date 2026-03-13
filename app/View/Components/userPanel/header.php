@@ -1,12 +1,12 @@
 <?php
 
-namespace App\View\Components\user-panel;
+namespace App\View\Components\userPanel;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class footer extends Component
+class header extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class footer extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.user-panel.footer');
+        return view('components.userPanel.header');
     }
 }
