@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 .home-hero {
+    font-family: "lora", serif;
     background-image: url("/web-images/hero8.png");
     background-size: cover;
     background-position: top right;
@@ -33,18 +36,20 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 28%;
+    height: 30%;
+    gap: 30px;
 }
 
 .home-hero .home-hero-title {
     font-size: 3.8rem;
-    font-weight: 700;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
 .home-hero-subtitle {
-    font-size: 1.4rem;
-    line-height: 1.1;
-    opacity: 0.95;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    opacity: 0.7;
 }
 
 .home-hero .home-hero-btns {
@@ -125,15 +130,17 @@
     width: 100%;
 }
 .home-head h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2.2rem;
+    font-weight: 500;
     text-transform: uppercase;
+    letter-spacing: 1px;
     padding: 0 4%;
 }
 .home-head-line {
     flex: 1 1 auto;
     height: 1px;
     background-color: #333;
+    opacity: 0.5;
 }
 .home-head-para {
     display: flex;
@@ -142,12 +149,12 @@
     width: 100%;
 }
 .home-head-para p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #555;
     max-width: 600px;
     text-align: center;
 }
-.home-card-grid{
+.home-card-grid {
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
@@ -223,6 +230,80 @@
     /* background-color: aquamarine; */
 }
 
+/* ================= PROMO BANNER ================= */
+
+/* ================== PROMO BANNER ================= */
+
+.home-promo-banner {
+    font-family: "Lora", serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 420px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    position: relative;
+    color: #fff;
+}
+
+/* Overlay */
+.home-promo-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+
+/* Content */
+.home-promo-banner-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 650px;
+    padding: 0 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Title */
+.home-promo-banner-title {
+    font-size: 44px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Subtitle */
+.home-promo-banner-subtitle {
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+
+/* Button */
+.promo-banner-btn {
+    background: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 12px 26px;
+    font-size: 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.promo-banner-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
 /* ================= RESPONSIVE ================= */
 
 /* ================= TABLET ================= */
@@ -272,6 +353,13 @@
     .home-section .home-section-content {
         gap: 40px;
     }
+    .home-promo-banner-title {
+        font-size: 36px;
+    }
+
+    .home-promo-banner-subtitle {
+        font-size: 16px;
+    }
 }
 
 /* ================= MOBILE ================= */
@@ -312,6 +400,14 @@
     .home-section .home-section-content {
         gap: 30px;
     }
+
+    .home-promo-banner {
+        height: 360px;
+    }
+
+    .home-promo-banner-title {
+        font-size: 30px;
+    }
 }
 
 /* ================= SMALL MOBILE ================= */
@@ -341,6 +437,17 @@
     .home-section .home-section-content {
         gap: 20px;
     }
+    .home-promo-banner {
+        height: 320px;
+    }
+
+    .home-promo-banner-title {
+        font-size: 26px;
+    }
+
+    .home-promo-banner-subtitle {
+        font-size: 15px;
+    }
 }
 
 /* ================= SMALLEST MOBILE ================= */
@@ -368,5 +475,8 @@
     }
     .home-section .home-section-content {
         gap: 10px;
+    }
+    .home-promo-banner {
+        height: 280px;
     }
 }
