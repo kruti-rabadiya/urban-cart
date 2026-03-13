@@ -119,24 +119,46 @@
     </section>
 
     {{-- promo banner --}}
-    <section class="home-promo-banner" style="background-image: url('{{ asset('web-images/promo-banner.jpg') }}')">
+    <section class="home-banner">
+        <div class="home-promo-banner" style="background-image: url('{{ asset('web-images/promo-banner.jpg') }}')">
 
-        <div class="home-promo-banner-content">
+            <div class="home-promo-banner-content">
 
-            <h2 class="home-promo-banner-title">
-                Modern Essentials
-            </h2>
+                <h2 class="home-promo-banner-title">
+                    Modern Essentials
+                </h2>
 
-            <p class="home-promo-banner-subtitle">
-                Discover timeless fashion designed for comfort, confidence and everyday elegance.
-            </p>
+                <p class="home-promo-banner-subtitle">
+                    Discover timeless fashion designed for comfort, confidence and everyday elegance.
+                </p>
 
-            <a href="#ShopNow" class="promo-banner-btn">
-                Shop Collection
-            </a>
+                <a href="#ShopNow" class="promo-banner-btn">
+                    Shop Collection
+                </a>
+
+            </div>
 
         </div>
-
+        <div class="home-trust-section">
+            <div class="trust-wraper">
+                <div class="trust-fast-shipping trust-item">
+                    <img src="{{ asset('svgs/fast-shipping.svg') }}" alt="Fast Shipping Icon">
+                    <p>Fast Shipping</p>
+                </div>
+                <div class="secure-paymen trust-item">
+                    <img src="{{ asset('svgs/secure-payment.svg') }}" alt="Secure Payment Icon">
+                    <p>Secure Payment</p>
+                </div>
+                <div class="easy-return trust-item">
+                    <img src="{{ asset('svgs/easy-return.svg') }}" alt="Easy Return Icon">
+                    <p>Easy Return</p>
+                </div>
+                <div class="trust-quality trust-item">
+                    <img src="{{ asset('svgs/premium-quality.svg') }}" alt="Quality Icon">
+                    <p>Premium Quality</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     {{-- new arrivals --}}
@@ -190,16 +212,20 @@
                     <p>See what our customers are saying about our products.</p>
                 </div>
             </div>
-            <div class="home-card-grid-section">
-                <div class="home-card-grid">
+            <div class="review-scroll-wrapper">
+                <button class="review-arrow review-arrow-left" aria-label="Scroll left">&#8249;</button>
+                <div class="home-card-grid-section">
+                    <div class="home-card-grid">
 
-                    @for ($i = 0; $i <= 7; $i++)
-                        <x-userPanel.review-card />
-                    @endfor
+                        @for ($i = 0; $i <= 7; $i++)
+                            <x-userPanel.review-card />
+                        @endfor
+                    </div>
+
                 </div>
-
+                <button class="review-arrow review-arrow-right" aria-label="Scroll right">&#8250;</button>
             </div>
-            <div class="carousel-dots-section">
+            {{-- <div class="carousel-dots-section">
                 <div class="carousel-dots-scroll">
                     <div class="crousel-dots">
                         @for ($j = 0; $j <= 7; $j++)
@@ -207,7 +233,7 @@
                         @endfor
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </section>
 
@@ -223,4 +249,3 @@
         })
     </script>
 @endsection
-
