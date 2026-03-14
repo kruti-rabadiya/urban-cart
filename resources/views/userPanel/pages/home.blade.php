@@ -106,7 +106,7 @@
                 </div>
 
             </div>
-            {{-- <div class="carousel-dots-section">
+            <div class="carousel-dots-section">
                 <div class="carousel-dots-scroll">
                     <div class="crousel-dots">
                         @for ($j = 0; $j <= 20; $j++)
@@ -114,7 +114,7 @@
                         @endfor
                     </div>
                 </div>
-            </div> --}}
+            </div>
         </div>
     </section>
 
@@ -204,43 +204,43 @@
                 <div class="home-head">
                     <div class="home-head-line"></div>
                     <h2>
-                        CUSTOMER REVIEWS
+                        Customer Reviews
                     </h2>
                     <div class="home-head-line"></div>
                 </div>
                 <div class="home-head-para">
-                    <p>See what our customers are saying about our products.</p>
+                    {{-- small description --}}
+                    <p>See what our customers are saying.
+                    </p>
                 </div>
             </div>
+
             <div class="review-scroll-wrapper">
-                <button class="review-arrow review-arrow-left" aria-label="Scroll left">&#8249;</button>
-                <div class="home-card-grid-section">
-                    <div class="home-card-grid">
 
-                        @for ($i = 0; $i <= 7; $i++)
-                            <x-userPanel.review-card />
+                <div class="review-carousel">
+                    <div class="review-track">
+
+                        {{-- Reviews --}}
+                        @for ($i = 0; $i < 5; $i++)
+                            <div class="review-card-home">
+                                <x-userPanel.review-card />
+                            </div>
                         @endfor
-                    </div>
 
+                    </div>
                 </div>
-                <button class="review-arrow review-arrow-right" aria-label="Scroll right">&#8250;</button>
+
             </div>
-            {{-- <div class="carousel-dots-section">
-                <div class="carousel-dots-scroll">
-                    <div class="crousel-dots">
-                        @for ($j = 0; $j <= 7; $j++)
-                            <span class="carousel-dot{{ $j === 0 ? ' active' : '' }}"></span>
-                        @endfor
-                    </div>
-                </div>
-            </div> --}}
+
         </div>
     </section>
 
+
+
     {{-- Scripts --}}
     @push('scripts')
-        {{-- script for crousle--}}
-        <script src="{{ asset('js/userPanel/card-carousel.js') }}"></script>
+        {{-- script for crousle --}}
+        <script src="{{ asset('/js/userPanel/pages/card-carousle.js') }}"></script>
     @endpush
 
 @endsection

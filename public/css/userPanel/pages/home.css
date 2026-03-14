@@ -125,6 +125,12 @@
     width: 100%;
     padding: min(8%, 70px) 4% 0% 4%;
 }
+
+/* Avoid stacked top+bottom spacing between New Arrivals and Reviews */
+.home-new-arrivals + .home-reviews .home-heading {
+    padding-top: 0;
+}
+
 .home-head {
     display: flex;
     justify-content: center;
@@ -162,7 +168,6 @@
     overflow-x: auto;
     scroll-behavior: smooth;
     width: max-content;
-    padding-left: 4%;
     margin: auto;
 }
 
@@ -237,7 +242,6 @@
     gap: 15px;
     width: max-content;
     margin: 0 auto;
-    padding-left: 4%;
 }
 
 .carousel-dot {
@@ -342,87 +346,66 @@
 }
 
 /* ============== Review =========== */
-.home-reviews {
-    background-color: #f9f9f9;
-}
-
-/* ---- Review scroll arrows ---- */
-.review-scroll-wrapper {
+.review-scroll-wrapper{
+    overflow: hidden;
     position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
 }
 
-.review-scroll-wrapper::before,
-.review-scroll-wrapper::after {
+.review-carousel{
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+.review-carousel::before,
+.review-carousel::after{
     content: "";
     position: absolute;
     top: 0;
-    bottom: 0;
-    width: 120px;
-    z-index: 5;
+    width: 64px;
+    height: 100%;
     pointer-events: none;
+    z-index: 1;
 }
 
-.review-scroll-wrapper::before {
+.review-carousel::before{
     left: 0;
-    background: linear-gradient(to right, #f9f9f9 30%, transparent);
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 }
 
-.review-scroll-wrapper::after {
+.review-carousel::after{
     right: 0;
-    background: linear-gradient(to left, #f9f9f9 30%, transparent);
+    background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 }
 
-.review-arrow {
-    position: absolute;
-    z-index: 10;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    color: #555e66;
-    font-size: 1.3rem;
+.review-track{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        box-shadow 0.2s ease,
-        transform 0.2s ease;
-    line-height: 1;
-    padding: 0 0 1px 0;
-    user-select: none;
-    outline: none;
+    gap: 20px;
+    width: max-content;
+    will-change: transform;
+    justify-self: center;
+
 }
 
-.review-arrow:hover {
-    background: rgba(255, 255, 255, 0.9);
-    color: #1e2226;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.13);
-    transform: translateY(-50%) scale(1.08);
+/* animation */
+.review-track.scrolling{
+    animation: reviewScroll 25s linear infinite;
 }
 
-.review-arrow:active {
-    transform: translateY(-50%) scale(0.94);
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+/* pause on hover */
+.review-scroll-wrapper:hover .review-track.scrolling{
+    animation-play-state: paused;
 }
 
-.review-arrow-left {
-    left: 12px;
+@keyframes reviewScroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-33.333333%);
+    }
 }
-.review-arrow-right {
-    right: 12px;
-}
+
+/* ---- Review scroll arrows ---- */
 
 /* ================= RESPONSIVE ================= */
 
@@ -489,14 +472,9 @@
         padding: 0 7%;
     }
 
-    .review-scroll-wrapper::before,
-    .review-scroll-wrapper::after {
-        display: none;
-    }
+   
 
-    .review-arrow {
-        display: none;
-    }
+   
 
     .home-hero .home-hero-title {
         font-size: 2.2rem;
@@ -596,6 +574,10 @@
         padding: 12px 20px;
         white-space: normal;
     }
+    .review-carousel::before,
+.review-carousel::after{
+    display: none;
+}
 }
 
 /* ================= SMALLEST MOBILE ================= */
