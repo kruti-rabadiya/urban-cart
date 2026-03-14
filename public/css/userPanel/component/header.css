@@ -247,10 +247,12 @@ header .hamburger-menu {
     z-index: 1000;
     visibility: hidden;
     opacity: 0;
-    transition: all 0.3s ease;
+   transform: translatex(-100%);
+    transition: transform .35s ease;
 }
 header .hamburger-menu.active {
     visibility: visible;
+    transform: translatex(0%);
     opacity: 1;
 }
 header .hamburger-menu .hamburger-content::-webkit-scrollbar {
@@ -317,18 +319,19 @@ header .ham-link-box a {
     text-decoration: none;
     transition: color 0.2s ease;
     text-align: center;
-    padding-top: 5px;
 }
-header .ham-link-box img {
+header .ham-link-box svg{
     height: 20px;
+    width: fit-content;
     align-items: center;
+    display: block;
 }
 header .ham-shop-link {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-header .ham-shop-link img {
+header .ham-shop-link svg {
     height: 22px;
 }
 header .ham-shop-link a {

@@ -237,15 +237,10 @@
         </div>
     </section>
 
+    {{-- Scripts --}}
+    @push('scripts')
+        {{-- script for crousle--}}
+        <script src="{{ asset('js/userPanel/card-carousel.js') }}"></script>
+    @endpush
 
-    <script>
-        const crousleDots = document.querySelectorAll('.carousel-dot');
-        crousleDots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                crousleDots.forEach(dot => dot.classList.remove('active'));
-                dot.classList.add('active');
-
-            })
-        })
-    </script>
 @endsection
