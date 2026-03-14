@@ -8,3 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::view('/', 'userPanel.pages.home')->name('home');
+
+// product listing page
+
+Route::view('/shop', 'userPanel.pages.shop')->name('shop');

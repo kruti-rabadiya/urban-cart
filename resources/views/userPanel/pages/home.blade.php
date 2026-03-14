@@ -36,7 +36,7 @@
                     Shop New Arrivals
                 </a>
 
-                <a href="#Collection" class="btn btn-outline">
+                <a href="{{ route('shop') }}" class="btn btn-outline">
                     Explore Collection
                 </a>
 
@@ -235,12 +235,10 @@
         </div>
     </section>
 
-
-
-    {{-- Scripts --}}
-    @push('scripts')
-        {{-- script for crousle --}}
-        <script src="{{ asset('/js/userPanel/pages/card-carousle.js') }}"></script>
-    @endpush
-
 @endsection
+
+{{-- Scripts --}}
+@push('scripts')
+    {{-- script for crousle --}}
+    <script src="{{ asset('/js/userPanel/pages/card-carousle.js') }}"></script>
+@endpush
