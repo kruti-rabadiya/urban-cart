@@ -10,13 +10,22 @@
 
     {{-- shop hero css --}}
     <link rel="stylesheet" href="{{ asset('css/userPanel/component/shopHero.css') }}">
+
+    {{-- product card css --}}
+    <link rel="stylesheet" href="{{ asset('css/userPanel/component/product-card.css') }}">
+
+    {{-- shop list section css --}}
+    <link rel="stylesheet" href="{{ asset('css/userPanel/component/shop-list-section.css') }}">
 @endpush
 
+
 @section('content')
+
     {{-- page nav --}}
     <x-userPanel.page-nav>
         <span class="shop-breadcrumb-current">Shop</span>
     </x-userPanel.page-nav>
+
 
     {{-- shop hero --}}
     @if (request()->routeIs('shop'))
@@ -26,17 +35,22 @@
     @endif
 
 
-
-
-    {{-- product listing --}}
-    <section class="product-listing-nav">
-
-    </section>
-
-
-
+    {{-- shop list section --}}
+    <x-userPanel.shop-list-section>
+        <div class="shop-product-card-wrapper">
+            @for ($i = 0; $i < 30; $i++)
+                <x-userPanel.product-card />
+            @endfor
+        </div>
+    </x-userPanel.shop-list-section>
 
 @endsection
 
+
 @push('scripts')
+    {{-- shop page specific js --}}
+    <script src="{{ asset('js/userPanel/pages/shop.js') }}"></script>
+
+    {{-- shop filter js --}}
+    <script src="{{ asset('js/userPanel/component/shop-filter.js') }}"></script>
 @endpush
