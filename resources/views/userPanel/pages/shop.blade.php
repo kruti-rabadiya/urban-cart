@@ -38,7 +38,7 @@
     {{-- shop list section --}}
     <x-userPanel.shop-list-section>
         <div class="shop-product-card-wrapper">
-            @for ($i = 0; $i < 30; $i++)
+            @for ($i = 0; $i < 12; $i++)
                 <x-userPanel.product-card />
             @endfor
         </div>
@@ -53,4 +53,10 @@
 
     {{-- shop filter js --}}
     <script src="{{ asset('js/userPanel/component/shop-filter.js') }}"></script>
+
+    {{-- shop dropdown js --}}
+    <script src="{{ asset('js/userPanel/component/shop-drop-down.js') }}"></script>
+
+    {{-- pagination js --}}
+    <script src="{{ asset('js/userPanel/component/pagination.js') }}"></script>
 @endpush

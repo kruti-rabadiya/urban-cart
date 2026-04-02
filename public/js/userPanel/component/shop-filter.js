@@ -1,9 +1,54 @@
-document.addEventListener("DOMContentLoaded", () => {
+function setDropdownState(toggleBtn, content, arrow, isExpanded) {
+    toggleBtn.setAttribute("aria-expanded", String(isExpanded));
+    content.hidden = !isExpanded;
+
+    if (arrow) {
+        arrow.style.transform = isExpanded ? "rotate(180deg)" : "rotate(0deg)";
+    }
+}
+
+function setupFilterDropdown(dropdown, index) {
+    const toggleBtn = dropdown.querySelector(".shop-filter-dropdown-toggle");
+    const content = dropdown.querySelector(".shop-filter-dropdown-list, .shop-filter-price-list");
+    const arrow = dropdown.querySelector(".shop-filter-drop-down");
+
+    if (!toggleBtn || !content) {
+        return;
+    }
+
+    const contentId = content.id || `shop-filter-content-${index + 1}`;
+    content.id = contentId;
+    toggleBtn.setAttribute("aria-controls", contentId);
+
+    if (arrow) {
+        arrow.style.transition = "transform 0.2s ease";
+    }
+
+    setDropdownState(toggleBtn, content, arrow, true);
+
+    toggleBtn.addEventListener("click", () => {
+        const isExpanded = toggleBtn.getAttribute("aria-expanded") === "true";
+        setDropdownState(toggleBtn, content, arrow, !isExpanded);
+    });
+}
+
+function initializeFilterDropdowns() {
+    const filterDropdowns = document.querySelectorAll(".shop-filter-dropdown");
+    filterDropdowns.forEach((dropdown, index) => {
+        setupFilterDropdown(dropdown, index);
+    });
+}
+
+function initializePriceRangeFilter() {
     const minSlider = document.querySelector(".min-input");
     const maxSlider = document.querySelector(".max-input");
     const minBox = document.querySelector(".min-value");
     const maxBox = document.querySelector(".max-value");
     const progress = document.querySelector(".shop-slider-progress");
+
+    if (!minSlider || !maxSlider || !minBox || !maxBox || !progress) {
+        return;
+    }
 
     const minGap = 1000;
     const maxValue = parseInt(maxSlider.max);
@@ -61,4 +106,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // initial setup
     updateSlider({ target: minSlider });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    initializeFilterDropdowns();
+    initializePriceRangeFilter();
 });

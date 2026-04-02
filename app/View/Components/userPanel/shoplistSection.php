@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class shopList-section extends Component
+class shopListSection extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class shopList-section extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.user-panel.shop-list-section');
+        return view('components.userPanel.shop-list-section');
     }
 }
