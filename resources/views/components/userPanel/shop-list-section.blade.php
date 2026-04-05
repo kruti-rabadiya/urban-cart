@@ -1,10 +1,20 @@
 <section class="shop-list-section">
 
     {{-- Filter Sidebar --}}
-    <aside class="filter-section">
+    <aside class="filter-section" id="mobile-filter-drawer" aria-hidden="true">
 
         <div class="shop-filter-heading">
             <h3>Filter by</h3>
+            <button type="button" class="mobile-filter-close" aria-label="Close filters">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path d="M19 5L5 19M5 5L9.5 9.5M12 12L19 19" stroke="#000000" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round"></path>
+                    </g>
+                </svg>
+            </button>
         </div>
 
         {{-- future filters --}}
@@ -170,7 +180,7 @@
         {{-- Sorting Navigation --}}
         <div class="product-listing-nav">
             {{-- filter svg --}}
-                <button type="button" class="tsf-filter-svg" aria-label="Open filters">
+                <button type="button" class="tsf-filter-svg" aria-label="Open filters" aria-controls="mobile-filter-drawer" aria-expanded="false">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -308,6 +318,12 @@
         </div>
 
     </section>
+
+    {{-- mobile filter  --}}
+    <div class="mobile-filter-overlay" aria-hidden="true">
+        
+    </div>
+        
 
 </section>
 

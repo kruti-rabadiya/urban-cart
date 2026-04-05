@@ -108,7 +108,96 @@ function initializePriceRangeFilter() {
     updateSlider({ target: minSlider });
 }
 
+//! Mobile filter drawer logic
+
+function initializeMobileFilterDrawer() {
+    const openButton = document.querySelector(".tsf-filter-svg");
+    const drawer = document.querySelector(".filter-section");
+    const overlay = document.querySelector(".mobile-filter-overlay");
+    const closeButton = document.querySelector(".mobile-filter-close");
+    const applyButton = document.querySelector(".shop-filter-btn-apply");
+    const mobileQuery = window.matchMedia("(max-width: 780px)");
+
+    if (!openButton || !drawer || !overlay) {
+        return;
+    }
+
+    function closeDrawer() {
+        drawer.classList.remove("is-open");
+        overlay.classList.remove("is-visible");
+        document.body.classList.remove("mobile-filter-open");
+        openButton.setAttribute("aria-expanded", "false");
+        drawer.setAttribute("aria-hidden", "true");
+        overlay.setAttribute("aria-hidden", "true");
+    }
+
+    function openDrawer() {
+        if (!mobileQuery.matches) {
+            return;
+        }
+
+        drawer.classList.add("is-open");
+        overlay.classList.add("is-visible");
+        document.body.classList.add("mobile-filter-open");
+        openButton.setAttribute("aria-expanded", "true");
+        drawer.setAttribute("aria-hidden", "false");
+        overlay.setAttribute("aria-hidden", "false");
+    }
+
+    function syncDrawerForViewport() {
+        if (mobileQuery.matches) {
+            if (!drawer.classList.contains("is-open")) {
+                drawer.setAttribute("aria-hidden", "true");
+                overlay.setAttribute("aria-hidden", "true");
+                openButton.setAttribute("aria-expanded", "false");
+            }
+
+            return;
+        }
+
+        drawer.classList.remove("is-open");
+        overlay.classList.remove("is-visible");
+        document.body.classList.remove("mobile-filter-open");
+        openButton.setAttribute("aria-expanded", "false");
+        drawer.setAttribute("aria-hidden", "false");
+        overlay.setAttribute("aria-hidden", "true");
+    }
+
+    openButton.addEventListener("click", () => {
+        if (drawer.classList.contains("is-open")) {
+            closeDrawer();
+            return;
+        }
+
+        openDrawer();
+    });
+
+    if (closeButton) {
+        closeButton.addEventListener("click", closeDrawer);
+    }
+
+    if (applyButton) {
+        applyButton.addEventListener("click", () => {
+            if (mobileQuery.matches) {
+                closeDrawer();
+            }
+        });
+    }
+
+    overlay.addEventListener("click", closeDrawer);
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && drawer.classList.contains("is-open")) {
+            closeDrawer();
+        }
+    });
+
+    window.addEventListener("resize", syncDrawerForViewport);
+    syncDrawerForViewport();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     initializeFilterDropdowns();
     initializePriceRangeFilter();
+    initializeMobileFilterDrawer();
 });
